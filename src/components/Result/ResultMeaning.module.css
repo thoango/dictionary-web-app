@@ -1,0 +1,27 @@
+.meaning {
+    margin-top: 30px;
+}
+
+.meaning p {
+    font-size: calc(var(--font-size-body-small) + 2px);
+    line-height: calc(var(--line-height-body-small) + 3px);
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: var(--font-size-body-medium);
+    line-height: calc(var(--line-height-body-medium) - 2px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title span {
+    display: inline-block;
+    width: 80%;
+    height: 1px;
+    background-color: var(--grey-color-light);
+}
+
+.definitions {}

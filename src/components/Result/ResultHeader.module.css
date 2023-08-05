@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: calc(var(--font-size-heading-large) / 2);
+    line-height: 40px;
+}
+
+.phonetic {
+    font-size: var(--font-size-body-medium);
+    color: var(--purple-color);
+    line-height: var(--line-height-body-medium);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.button {
+    width: 48px;
+}

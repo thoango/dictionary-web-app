@@ -23,15 +23,19 @@
 
   /* color */
   --primary-color: #2d2d2d;
+
   --grey-color-lighter: #f4f4f4;
   --grey-color-light: #e9e9e9;
   --grey-color-dark: #757575;
+
   --purple-color: #a445ed;
   --red-color: #ff5252;
+
   --black-color-01: #050505;
   --black-color-02: #1f1f1f;
   --black-color-03: #2d2d2d;
   --black-color-04: #3a3a3a;
+
   --white-color: #fff;
 }
 
