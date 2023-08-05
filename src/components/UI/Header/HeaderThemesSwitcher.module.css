@@ -1,0 +1,24 @@
+.button {
+    width: 40px;
+    height: 20px;
+    background-color: var(--grey-color-dark);
+    border-radius: 10px;
+    padding: 0 3px;
+    margin-right: 10px;
+
+    display: inline-flex;
+    align-items: center;
+}
+
+.button span {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--white-color);
+}
+
+.icon {
+    width: 20px;
+    display: inline-block;
+}

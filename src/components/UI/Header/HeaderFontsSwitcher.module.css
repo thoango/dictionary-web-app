@@ -1,0 +1,13 @@
+.button {
+    line-height: 24px;
+}
+
+.button-text {
+    font-weight: bold;
+}
+
+.button-icon {
+    width: 12px;
+    margin: 0 16px;
+    display: inline-block;
+}

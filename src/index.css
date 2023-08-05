@@ -1,13 +1,171 @@
+@font-face {
+  font-family: "sans-serif";
+  src: url(./assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+:root {
+  /* font-family */
+  --font-family-sans-serif: "sans-serif";
+
+  /* font-size */
+  --font-size-body-small: 14px;
+  --font-size-body-medium: 18px;
+  --font-size-heading-small: 20px;
+  --font-size-heading-medium: 24px;
+  --font-size-heading-large: 64px;
+
+  /* line-height */
+  --line-height-body-small: 17px;
+  --line-height-body-medium: 24px;
+  --line-height-heading-small: 24px;
+  --line-height-heading-medium: 29px;
+  --line-height-heading-large: 77px;
+
+  /* color */
+  --primary-color: #2d2d2d;
+  --grey-color-lighter: #f4f4f4;
+  --grey-color-light: #e9e9e9;
+  --grey-color-dark: #757575;
+  --purple-color: #a445ed;
+  --red-color: #ff5252;
+  --black-color-01: #050505;
+  --black-color-02: #1f1f1f;
+  --black-color-03: #2d2d2d;
+  --black-color-04: #3a3a3a;
+  --white-color: #fff;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-size: var(--font-size-body-small);
+  color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  backface-visibility: hidden;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+li {
+
+  &>ul,
+  &>ol {
+    margin-bottom: 0;
+  }
+}
+
+dd {
+  margin-left: 0;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+i,
+cite,
+em,
+address,
+dfn {
+  font-style: normal;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding: 0.2em;
+}
+
+pre code {
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+hr,
+table,
+fieldset,
+figure,
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
 }
