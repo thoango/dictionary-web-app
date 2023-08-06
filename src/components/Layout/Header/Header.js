@@ -5,7 +5,7 @@ import LogoImage from "../../../assets/images/logo.svg";
 
 import classes from "./Header.module.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={classes.header}>
       <div className={classes["header-logo"]}>
@@ -13,11 +13,14 @@ const Header = () => {
       </div>
       <nav className={classes["header-navbar"]}>
         <ul>
-          <li>
+          <li className={classes["fonts-switcher"]}>
             <HeaderFontsSwitcher></HeaderFontsSwitcher>
           </li>
           <li>
-            <HeaderThemesSwitcher></HeaderThemesSwitcher>
+            <HeaderThemesSwitcher
+              onToggleDarkMode={props.onToggleDarkMode}
+              darkMode={props.darkMode}
+            ></HeaderThemesSwitcher>
           </li>
         </ul>
       </nav>

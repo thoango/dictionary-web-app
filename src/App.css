@@ -1,4 +1,24 @@
 .App {
-    padding: 24px;
     font-family: var(--font-family-sans-serif);
+    background-color: transparent;
+    /* transition: color .3s; */
+}
+
+.App-content {
+    padding: 24px;
+    max-width: 816px;
+    margin: auto;
+}
+
+.darkmode {
+    &.App {
+        background-color: var(--black-color-01);
+        color: var(--white-color);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .App-content {
+        padding: 58px 40px;
+    }
 }

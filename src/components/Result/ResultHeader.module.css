@@ -20,3 +20,20 @@
 .button {
     width: 48px;
 }
+
+@media screen and (min-width: 768px) {
+    .header h1 {
+        font-size: var(--font-size-heading-large);
+        line-height: var(--line-height-heading-large);
+    }
+
+    .phonetic {
+        font-size: var(--font-size-heading-medium);
+        line-height: var(--line-height-heading-medium);
+        margin-top: 8px;
+    }
+
+    .button {
+        width: 75px;
+    }
+}

@@ -1,32 +1,37 @@
 import classes from "./ResultMeaning.module.css";
+import darkClasses from "./DarkModeResultMeaning.module.css";
 
-const ResultMeaning = () => {
+const ResultMeaning = (props) => {
   return (
     <article className={classes.meaning}>
-      <h2 className={classes.title}>
+      <h2 className={!props.darkMode ? classes.title : darkClasses.title}>
         noun
         <span></span>
       </h2>
-      <p>Meaning</p>
+      <p className={!props.darkMode ? classes.subTitle : darkClasses.subTitle}>
+        Meaning
+      </p>
       <ul className={classes.definitions}>
         <li>
-          (etc.) A set of keys used to operate a typewriter, computer etc.
+          <span>
+            (etc.) A set of keys used to operate a typewriter, computer etc.
+          </span>
         </li>
         <li>
-          A component of many instruments including the piano, organ, and
-          harpsichord consisting of usually black and white keys that cause
-          different tones to be produced when struck.
+          <span>
+            A component of many instruments including the piano, organ, and
+            harpsichord consisting of usually black and white keys that cause
+            different tones to be produced when struck.
+          </span>
         </li>
         <li>
-          A device with keys of a musical keyboard, used to control electronic
-          sound-producing devices which may be built into or separate from the
-          keyboard device.
+          <span>
+            A device with keys of a musical keyboard, used to control electronic
+            sound-producing devices which may be built into or separate from the
+            keyboard device.
+          </span>
         </li>
       </ul>
-      <p>
-        <span>Synonyms</span>
-        <span>electronic keyboard</span>
-      </p>
     </article>
   );
 };
