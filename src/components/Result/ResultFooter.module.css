@@ -1,8 +1,15 @@
 .footer {
     margin-top: 32px;
     padding: 24px 0 62px;
-    border-top: 1px solid var(--grey-color-light);
     font-size: var(--font-size-body-small);
+
+    /* light */
+    border-top: 1px solid var(--grey-color-light);
+
+    &.darkmode {
+        /* dark */
+        border-top: 1px solid var(--black-color-04);
+    }
 }
 
 .footer-title {

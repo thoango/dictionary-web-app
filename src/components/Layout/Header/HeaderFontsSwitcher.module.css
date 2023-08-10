@@ -1,6 +1,5 @@
 .button {
     line-height: 24px;
-    position: relative;
 }
 
 .button-text {
@@ -17,29 +16,32 @@
     position: absolute;
     width: 140px;
     top: 40px;
-    right: 15px;
-    /* top: 72px;
-    width: 182px; */
-    filter: drop-shadow(0 5px 30px rgba(0, 0, 0, 10%));
-    /* padding: 22px; */
+    right: 20px;
     padding: 15px;
-    background-color: var(--white-color);
     border-radius: 16px;
     opacity: 0;
-    transition: all .3s;
+    z-index: -10;
+
+    /* light */
+    filter: drop-shadow(0 5px 30px rgba(0, 0, 0, 10%));
+    background-color: var(--white-color);
+
+    /* darkmode */
+    &.darkmode {
+        filter: drop-shadow(0 5px 30px var(--purple-color));
+        background-color: var(--black-color-02);
+    }
 }
 
 .is-showed {
     opacity: 1;
-    transform: all .3s;
+    z-index: 10;
 }
 
-.fonts li {
-    display: block;
+.fonts button {
     text-align: left;
-    padding: 0;
     margin-bottom: 8px;
-    /* margin-bottom: 15px; */
+    width: 100%;
 
     &:last-child {
         margin-bottom: 0;
@@ -65,5 +67,16 @@
 @media screen and (min-width: 768px) {
     .button-icon {
         margin: 0 26px 0 18px;
+    }
+
+    .fonts {
+        top: 42px;
+        right: 30px;
+        width: 182px;
+        padding: 22px;
+    }
+
+    .fonts button {
+        margin-bottom: 15px;
     }
 }

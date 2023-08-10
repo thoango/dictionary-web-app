@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./components/Layout/Header/Header";
 import Form from "./components/Layout/Form/Form";
@@ -8,18 +8,76 @@ import "./App.css";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [fontStyle, setFontStyle] = useState("sans-serif");
+  const [keyword, setKeyword] = useState("keyboard");
+  const [result, setResult] = useState();
 
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
   };
 
+  const applyFontHandler = (font) => {
+    setFontStyle(font);
+  };
+
+  const translateResult = (data) => {
+    const result = {
+      word: data.word,
+      phonetic: data.phonetic,
+      audio: data.phonetics.find((item) => item.audio).audio,
+      meanings: data.meanings,
+      sourceUrls: data.sourceUrls,
+    };
+    return result;
+  };
+
+  const fetchDataHandler = async () => {
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+
+      const data = await response.json();
+      const translatedData = translateResult(data[0]);
+      setResult(translatedData);
+    } catch (error) {}
+  };
+
+  const searchKeywordHandler = (word) => {
+    setKeyword(word);
+  };
+
+  useEffect(() => {
+    fetchDataHandler();
+
+    return () => {
+      setResult(null);
+    };
+  }, [keyword]);
+
+  let fontFamily = "";
+  if (fontStyle === "serif") {
+    fontFamily = "serif";
+  } else if (fontStyle === "mono") {
+    fontFamily = "mono";
+  }
+
   return (
-    <div className={`App${darkMode && " darkmode"}`}>
+    <div className={`App ${fontFamily}${darkMode ? " darkmode" : ""}`}>
       <div className="App-content">
-        <Header onToggleDarkMode={toggleDarkMode} darkMode={darkMode}></Header>
+        <Header
+          onToggleDarkMode={toggleDarkMode}
+          onSelectFont={applyFontHandler}
+          darkMode={darkMode}
+          font={fontStyle}
+        ></Header>
         <main>
-          <Form darkMode={darkMode}></Form>
-          <Result darkMode={darkMode}></Result>
+          <Form darkMode={darkMode} onSearch={searchKeywordHandler}></Form>
+          {result && <Result darkMode={darkMode} result={result}></Result>}
         </main>
       </div>
     </div>

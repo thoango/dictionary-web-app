@@ -1,28 +1,59 @@
 .form {
     width: 100%;
     height: 48px;
-    border-radius: 16px;
-    background-color: var(--grey-color-lighter);
-    padding: 15px 24px;
     margin-bottom: 22px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
 }
 
 .form input {
     height: 100%;
-    width: calc(100% - 16px);
-    background-color: transparent;
-    border: none;
-    padding: 0;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    padding: 0 50px 0 24px;
     font-size: calc(var(--font-size-body-small) + 2px);
     font-weight: bold;
+
+    /* light */
+    background-color: var(--grey-color-lighter);
+}
+
+.form.darkmode input {
+    /* dark */
+    background-color: var(--black-color-02);
+    color: var(--white-color);
+}
+
+.form input:focus {
+    outline: none;
+    border: 1px solid var(--purple-color);
+}
+
+.form input::placeholder {
+    opacity: .25;
+
+    /* light */
+    color: var(--black-color-03);
+}
+
+.form.darkmode input::placeholder {
+    /* dark */
+    color: var(--white-color);
 }
 
 .button {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    right: 0;
+}
+
+.imageWrap {
     width: 16px;
+}
+
+.error input {
+    border-color: var(--red-color);
 }
 
 @media screen and (min-width: 768px) {

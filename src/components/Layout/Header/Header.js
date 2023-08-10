@@ -13,10 +13,14 @@ const Header = (props) => {
       </div>
       <nav className={classes["header-navbar"]}>
         <ul>
-          <li className={classes["fonts-switcher"]}>
-            <HeaderFontsSwitcher></HeaderFontsSwitcher>
+          <li className={`${classes.item} ${classes["fonts-switcher"]}`}>
+            <HeaderFontsSwitcher
+              darkMode={props.darkMode}
+              onSelectFont={props.onSelectFont}
+              font={props.font}
+            ></HeaderFontsSwitcher>
           </li>
-          <li>
+          <li className={classes.item}>
             <HeaderThemesSwitcher
               onToggleDarkMode={props.onToggleDarkMode}
               darkMode={props.darkMode}

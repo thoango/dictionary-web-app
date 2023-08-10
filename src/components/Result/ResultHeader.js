@@ -1,16 +1,15 @@
-import PlayIcon from "../../assets/images/icon-play.svg";
-
 import classes from "./ResultHeader.module.css";
 
-const ResultHeader = () => {
+const ResultHeader = (props) => {
   return (
     <header className={classes.header}>
       <div>
-        <h1>keyboard</h1>
-        <span className={classes.phonetic}>/ˈkiːbɔːd/</span>
+        <h1>{props.word}</h1>
+        <span className={classes.phonetic}>{props.phonetic}</span>
       </div>
       <button className={classes.button}>
-        <img src={PlayIcon} />
+        <span className={classes["icon-circle"]}></span>
+        <span className={classes["icon-triangle"]}></span>
       </button>
     </header>
   );

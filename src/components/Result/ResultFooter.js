@@ -1,14 +1,19 @@
 import NewWindowIcon from "../../assets/images/icon-new-window.svg";
 
 import classes from "./ResultFooter.module.css";
-import darkClasses from "./DarkModeResultFooter.module.css";
 
 const ResultFooter = (props) => {
+  let darkmodeClass = props.darkMode ? classes.darkmode : "";
+
   return (
-    <footer className={!props.darkMode ? classes.footer : darkClasses.footer}>
+    <footer className={`${classes.footer} ${darkmodeClass}`}>
       <span className={classes["footer-title"]}>Source</span>
-      <a className={classes["footer-link"]}>
-        https://en.wiktionary.org/wiki/keyboard
+      <a
+        className={classes["footer-link"]}
+        target="_blank"
+        href={props.sourceUrls}
+      >
+        {props.sourceUrls}
         <span className={classes["footer-icon"]}>
           <img src={NewWindowIcon} />
         </span>

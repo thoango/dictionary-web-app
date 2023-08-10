@@ -1,13 +1,19 @@
 .button {
     width: 40px;
     height: 20px;
-    background-color: var(--grey-color-dark);
     border-radius: 10px;
     padding: 0 3px;
     margin-right: 10px;
-
     display: inline-flex;
     align-items: center;
+
+    /* light */
+    background-color: var(--grey-color-dark);
+
+    &.darkmode {
+        /* dark */
+        background-color: var(--purple-color);
+    }
 }
 
 .button span {
@@ -20,9 +26,19 @@
     transition: all .3s;
 }
 
+.button.darkmode span {
+    /* dark */
+    transform: translateX(20px);
+}
+
 .icon-wrapper {
     width: 20px;
     display: inline-block;
+}
+
+.icon.darkmode path {
+    /* dark */
+    stroke: var(--purple-color);
 }
 
 @media screen and (min-width: 768px) {

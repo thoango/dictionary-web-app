@@ -10,11 +10,17 @@
     margin: auto;
 }
 
-.darkmode {
-    &.App {
-        background-color: var(--black-color-01);
-        color: var(--white-color);
-    }
+.App.darkmode {
+    background-color: var(--black-color-01);
+    color: var(--white-color);
+}
+
+.App.serif {
+    font-family: var(--font-family-serif);
+}
+
+.App.mono {
+    font-family: var(--font-family-mono);
 }
 
 @media screen and (min-width: 768px) {

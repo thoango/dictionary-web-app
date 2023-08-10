@@ -92,6 +92,10 @@ a {
   &:focus {
     text-decoration: none;
   }
+
+  &:visited {
+    color: var(--black-color-03);
+  }
 }
 
 button {
@@ -141,7 +145,8 @@ th {
   text-align: left;
 }
 
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
   vertical-align: middle;

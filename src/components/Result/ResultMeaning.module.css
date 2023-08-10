@@ -15,13 +15,25 @@
     display: inline-block;
     width: 80%;
     height: 1px;
+
+    /* light */
     background-color: var(--grey-color-light);
+}
+
+.title.darkmode span {
+    /* dark */
+    background-color: var(--black-color-04);
 }
 
 .subTitle {
     font-size: calc(var(--font-size-body-small) + 2px);
     line-height: calc(var(--line-height-body-small) + 3px);
     margin-bottom: 16px;
+
+    &.darkmode {
+        /* dark */
+        color: var(--grey-color-dark);
+    }
 }
 
 .definitions {
