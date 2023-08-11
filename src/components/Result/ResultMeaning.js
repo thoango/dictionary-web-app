@@ -16,6 +16,9 @@ const ResultMeaning = (props) => {
             {meaning.definitions.map((definition, index) => (
               <li key={index}>
                 <span>{definition.definition}</span>
+                {definition.example && (
+                  <span className={classes.example}>{definition.example}</span>
+                )}
               </li>
             ))}
           </ul>

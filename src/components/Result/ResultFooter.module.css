@@ -25,6 +25,12 @@
 
 .footer-link {
     display: flex;
+    color: var(--black-color-03);
+
+    /* dark */
+    &.darkmode {
+        color: var(--white-color);
+    }
 }
 
 .footer-icon {

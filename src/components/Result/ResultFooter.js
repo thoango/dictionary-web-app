@@ -9,7 +9,7 @@ const ResultFooter = (props) => {
     <footer className={`${classes.footer} ${darkmodeClass}`}>
       <span className={classes["footer-title"]}>Source</span>
       <a
-        className={classes["footer-link"]}
+        className={`${classes["footer-link"]} ${darkmodeClass}`}
         target="_blank"
         href={props.sourceUrls}
       >

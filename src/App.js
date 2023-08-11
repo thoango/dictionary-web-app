@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Layout/Header/Header";
 import Form from "./components/Layout/Form/Form";
 import Result from "./components/Result/Result";
+import Error from "./components/Layout/Error/Error";
 
 import "./App.css";
 
@@ -11,6 +12,7 @@ const App = () => {
   const [fontStyle, setFontStyle] = useState("sans-serif");
   const [keyword, setKeyword] = useState("keyboard");
   const [result, setResult] = useState();
+  const [noResult, setNoResult] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevState) => !prevState);
@@ -38,12 +40,15 @@ const App = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        if (response.status === 404) {
+          setNoResult(true);
+        }
+      } else {
+        const data = await response.json();
+        const translatedData = translateResult(data[0]);
+        setResult(translatedData);
+        setNoResult(false);
       }
-
-      const data = await response.json();
-      const translatedData = translateResult(data[0]);
-      setResult(translatedData);
     } catch (error) {}
   };
 
@@ -58,6 +63,12 @@ const App = () => {
       setResult(null);
     };
   }, [keyword]);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setDarkMode(true);
+    }
+  }, []);
 
   let fontFamily = "";
   if (fontStyle === "serif") {
@@ -78,6 +89,7 @@ const App = () => {
         <main>
           <Form darkMode={darkMode} onSearch={searchKeywordHandler}></Form>
           {result && <Result darkMode={darkMode} result={result}></Result>}
+          {noResult && <Error></Error>}
         </main>
       </div>
     </div>
